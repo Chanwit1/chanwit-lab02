@@ -3,9 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <title>Chanwit</title>
+    <style> 
+.shakeimage{
+
+position:relative
+
+}
+
+</style>
+
+<script language="JavaScript1.2">
+
+//configure shake degree (where larger # equals greater shake)
+
+var rector=3
+
+///////DONE EDITTING///////////
+
+var stopit=0
+
+var a=1
+
+function init(which){
+
+stopit=0
+
+shake=which
+
+shake.style.left=0
+
+shake.style.top=0
+
+}
+
+function rattleimage(){
+
+if ((!document.all&&!document.getElementById)||stopit==1)
+
+return
+
+if (a==1){
+
+shake.style.top=parseInt(shake.style.top)+rector
+
+}
+
+else if (a==2){
+
+shake.style.left=parseInt(shake.style.left)+rector
+
+}
+
+else if (a==3){
+
+shake.style.top=parseInt(shake.style.top)-rector
+
+}
+
+else{
+
+shake.style.left=parseInt(shake.style.left)-rector
+
+}
+
+if (a<4)
+
+a++
+
+else
+
+a=1
+
+setTimeout("rattleimage()",50)
+
+}
+
+function stoprattle(which){
+
+stopit=1
+
+which.style.left=0
+
+which.style.top=0
+
+}
+
+</script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <title>Chanwit Gallery </title>
+    <link rel="stylesheet" media="screen" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -14,19 +100,48 @@
             <p>The ordinary photo gallerys</p>
         </div>
     </div>
-    <div class="row">
+    <header>
+        <div class="nav">
+           <ul>
+              <li class="home"><a href="#">Home</a></li>
+              <li class="item1"><a href="#">photo</a>
+                <ul>
+                   <li><a href="#">Me</a></li>
+                   <li><a href="#">Friend</a></li>
+                 </ul>
+              </li>
+              <li class="item2"><a href="#">Video</a>
+                 <ul>
+                  <li><a href="#">Me</a></li>
+                  <li><a href="#">Freind</a></li>
+                 </ul>
+              </li>
+              <li class="item3"><a href="#">Item3</a></li>
+        </div>
+     </header>
+     
+     <div class="row">
+        <!-- สลับรูปภาพ -->
         <div class="col-xl-3 col-md-6">
-           <img class="img-thumbnail" src="http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg"/>
+           <img class="img-thumbnail" src="http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg"  border="0"
+           onmouseover="this.src='https://f.ptcdn.info/148/047/000/ogfqy3gzpr405H5DU0I-o.jpg';"
+           onmouseout="this.src='http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg';"/>
         </div>
         <div class="col-xl-3 col-md-6">
-            <img class="img-thumbnail" src="http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg"/>
-         </div>
-         <div class="col-xl-3 col-md-6">
-            <img class="img-thumbnail" src="http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg"/>
-         </div>
-         <div class="col-xl-3 col-md-6">
-            <img class="img-thumbnail" src="http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg"/>
-         </div>
+         <img class="img-thumbnail" src="http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg"  border="0"
+         onmouseover="this.src='https://f.ptcdn.info/148/047/000/ogfqy3gzpr405H5DU0I-o.jpg';"
+         onmouseout="this.src='http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg';"/>
+      </div>
+      <div class="col-xl-3 col-md-6">
+         <img class="img-thumbnail" src="http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg"  border="0"
+         onmouseover="this.src='https://f.ptcdn.info/148/047/000/ogfqy3gzpr405H5DU0I-o.jpg';"
+         onmouseout="this.src='http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg';"/>
+      </div>
+      <div class="col-xl-3 col-md-6">
+         <img class="img-thumbnail" src="http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg"  border="0"
+         onmouseover="this.src='https://f.ptcdn.info/148/047/000/ogfqy3gzpr405H5DU0I-o.jpg';"
+         onmouseout="this.src='http://f.ptcdn.info/148/047/000/ogfqm8owtb6mDXMIzD1-o.jpg';"/>
+      </div>
     </div>
     <div class="row">
         <div class="col-xl-3 col-md-6">
